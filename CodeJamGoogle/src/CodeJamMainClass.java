@@ -36,8 +36,11 @@ public class CodeJamMainClass {
 	 */
 	public static void main(String[] args) {
 		//TicTacToe
-		(new TicTacToeTomek()).readInput();
-
+//		(new TicTacToeTomek()).readInput();
+		//Palindrome Generator for numbers
+		NumPalindromeGenerator obj = new NumPalindromeGenerator(99l); //199999991
+		obj.generateNextPalindrome();
+		System.out.println(obj.getPalindrome());
 	}
 
 }
