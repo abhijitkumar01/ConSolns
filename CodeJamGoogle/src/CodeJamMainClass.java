@@ -35,12 +35,14 @@ public class CodeJamMainClass {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		//Fair and Square
+		(new FairAndSquare()).readInput();
 		//TicTacToe
 //		(new TicTacToeTomek()).readInput();
 		//Palindrome Generator for numbers
-		NumPalindromeGenerator obj = new NumPalindromeGenerator(99l); //199999991
-		obj.generateNextPalindrome();
-		System.out.println(obj.getPalindrome());
+//		NumPalindromeGenerator obj = new NumPalindromeGenerator(1l); //199999991
+//		obj.generateNextPalindrome();
+//		System.out.println(obj.getPalindrome());
 	}
 
 }
