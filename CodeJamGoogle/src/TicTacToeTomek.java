@@ -1,8 +1,41 @@
+/**
+ *
+ *The MIT License (MIT)
+ *
+ *Copyright (c) 2014 Abhijit Kumar
+ *
+ *Permission is hereby granted, free of charge, to any person obtaining a copy
+ *of this software and associated documentation files (the "Software"), to deal
+ *in the Software without restriction, including without limitation the rights
+ *to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *copies of the Software, and to permit persons to whom the Software is
+ *furnished to do so, subject to the following conditions:
+ *
+ *The above copyright notice and this permission notice shall be included in all
+ *copies or substantial portions of the Software.
+ *
+ *THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *SOFTWARE.
+ *
+ **/
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 
+/**
+ * Solution for Tic-Tac-Toe-Tomek.
+ * Google code jam 2013 Qual Round
+ * (https://code.google.com/codejam/contest/2270488/dashboard#s=p0&a=0).
+ * 
+ * @author abhijitkumar2003[at]gmail[dot]com
+ * 
+ */
 public class TicTacToeTomek {
 	// Create a list of TicTacToe boards
 	// size of board = number of Test cases
@@ -31,8 +64,8 @@ public class TicTacToeTomek {
 	}
 
 	/**
-	 * helper method
-	 * Solve TicTacToe board one by one and print O/P for each board
+	 * helper method Solve TicTacToe board one by one and print O/P for each
+	 * board
 	 */
 	protected void solveTicTacToeBoards() {
 		for (int i = 0; i < boards.size(); i++) {
@@ -45,11 +78,9 @@ public class TicTacToeTomek {
 	 * helper method Solve one TicTacToe board
 	 * 
 	 * @param board
-	 * @return 
-	 *  "X won" (the game is over, and X won)
-	 *	"O won" (the game is over, and O won)
-	 *	"Draw" (the game is over, and it ended in a draw)
-	 *	"Game has not completed" (the game is not over yet)
+	 * @return "X won" (the game is over, and X won) "O won" (the game is over,
+	 *         and O won) "Draw" (the game is over, and it ended in a draw)
+	 *         "Game has not completed" (the game is not over yet)
 	 */
 	private String solveBoard(TicTacToeBoard board) {
 		String ret = "";
@@ -178,8 +209,8 @@ public class TicTacToeTomek {
 		if (toMatch == 'X' || toMatch == 'O') {
 			for (; ++j < board.boardSize;) {
 				matched = matched
-						&& ((board.board[j][board.boardSize - 1 - j] == toMatch) || 
-								(board.board[j][board.boardSize - 1 - j] == 'T'));
+						&& ((board.board[j][board.boardSize - 1 - j] == toMatch) || (board.board[j][board.boardSize
+								- 1 - j] == 'T'));
 			}
 		} else if (toMatch == 'T') {
 			toMatch = board.board[++j][board.boardSize - 1 - j];
