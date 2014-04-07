@@ -37,37 +37,38 @@ public class NumPalindromeGenerator {
 	private int[] num;
 
 	/**
+	 * @param num the num to set
+	 */
+	public void setNum(int[] num) {
+		this.num = num;
+	}
+	
+	/**
+	 * 
+	 * @param input
+	 */
+	public void setNum(long input) {
+		String temp = String.valueOf(input);
+		num = new int[temp.length()];
+		for (int i = 0; i < temp.length(); i++) {
+			num[i] = temp.charAt(i) - '0';
+		}
+	}
+
+	/**
 	 * @return the palindrome as long
 	 */
 	public long getPalindrome() {
 		long ret = 0;
-		for (int i = 0; i < num.length; i++) {
-			ret = ret
-					+ convertArray2Long(num[num.length - 1 - i],
-							i);
+		for (int i = num.length -1; i >= 0 ; i--) {
+			long pow = (long) Math.pow(10, i);
+			ret = ret + num[i] * pow;
 		}
 		return ret;
 	}
-
-	/**
-	 * Returns numeric representation of element at a position.
-	 * e.g a[] = {5, 6, 7}
-	 * 	its numeric representation is 567
-	 * 	so, convertArray2Long(7, 0) returns 7
-	 * 		convertArray2Long(6, 1) returns 60
-	 * 		convertArray2Long(5, 2) returns 500
-	 * @param num
-	 * @param pos
-	 * @return
-	 */
-	private long convertArray2Long(long num, int pos) {
-		if (pos == 0)
-			return num;
-		long ret = 1;
-		for (int i = 0; i < pos; i++) {
-			ret = ret * 10;
-		}
-		return ret * num;
+	
+	public NumPalindromeGenerator() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
